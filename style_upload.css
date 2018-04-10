@@ -1,0 +1,13 @@
+h2 {
+    color: darkslategray;
+}
+
+
+.container {
+    background-color: gainsboro;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: lightsteelblue;
+}
