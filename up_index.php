@@ -4,7 +4,9 @@ DEFINE('MONMAXFILESIZE', 1048576);
 
 if ( isset ($_POST['delete_file']) ){
     $chemin = 'files/' . $_POST['delete_file'];
-      @unlink($chemin);
+      if (file_exists($chemin)){
+          unlink($chemin);
+      }
 }
 
 
