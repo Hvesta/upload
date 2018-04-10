@@ -76,31 +76,31 @@ if (!empty($_FILES)) {
              <input type="hidden" name="MAX_FILE_SIZE" value="<?=MONMAXFILESIZE ?>"/>
              <input type="file" name="fichier[]" multiple="multiple"/> 
        </div>     
-       <button type="submit" class="btn btn-default" value="Send">Envoyer</button>
-    </form>
-    <p><br></p>    
-    <div class="row">
-    <?php $f = scandir('files/');
-    for($i=0; $i < count($f); $i++){
-        if(($f[$i] == '.') || ($f[$i] == '..'))
-        //if($f == ".." AND $f == ".")    
-        continue;    
-     ?>   
+         <button type="submit" class="btn btn-default" value="Send">Envoyer</button>
+     </form>
+      <p><br></p>    
+     <div class="row">
+      <?php $f = scandir('files/');
+        for($i=0; $i < count($f); $i++){
+            if(($f[$i] == '.') || ($f[$i] == '..'))
+            //if($f == ".." AND $f == ".")    
+            continue;    
+      ?>   
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="files/<?php echo $f[$i]?>" alt="image">
-          <div class="card-body">
+      <div class="card-body">
             <h5 class="card-title"><?php echo $f[$i]?></h5>
-          </div>      
-          <form action="" method="post">   
+      </div>      
+      <form action="" method="post">   
           <input type="hidden" name="delete_file" value="<?= $f[$i] ?>"/>      
           <button type="submit" class="btn btn-danger" role="button">Supprimer</button>
-          </form>  
+      </form> 
+          
       </div>
      <?php
     }              
-     ?>   
-    </div>   
-   </div>
-         
+     ?>    
+    </div>
+   </div>      
   </body>
 </html>
